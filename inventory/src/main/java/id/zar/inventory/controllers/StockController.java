@@ -1,4 +1,4 @@
-package id.zar.shipping.controllers;
+package id.zar.inventory.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import id.zar.shipping.entities.Order;
+import id.zar.inventory.entities.InventoryItem;
 
 @RestController
-@RequestMapping("/api/shipping/orders")
-public class OrderController {
+@RequestMapping("/api/inventory/stock")
+public class StockController {
     @GetMapping
-    public ResponseEntity<List<Order>> getAll(){
-        var result = new ArrayList<Order>();
-        result.add(Order.builder().id(UUID.randomUUID()).address("jember").status("sedang diantar").build());
+    public ResponseEntity<List<InventoryItem>> getAll(){
+        var result = new ArrayList<InventoryItem>();
+        result.add(InventoryItem.builder().id(UUID.randomUUID()).name("apel").quantity(10).build());
         return ResponseEntity.ok().body(result);
     }
 }

@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: inventory-service
+          uri: http://localhost:8101
+          predicates:
+            - Path=/api/inventory/**
+
+        - id: shipping-service
+          uri: http://localhost:8100
+          predicates:
+            - Path=/api/shipping/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

@@ -4,13 +4,15 @@ stop db:
 docker compose -f db.yml -p sister down
 
 
+start eureka:
+docker compose -f eureka.yml -p sister up -d
+stop eureka:
+docker compose -f eureka.yml -p sister down
+
+
 start inventory:
 docker compose -f inventory.yml -p sister up -d
 stop inventory:
 docker compose -f inventory.yml -p sister down
 
 
-start eureka:
-docker compose -f eureka.yml -p sister up -d
-stop eureka:
-docker compose -f eureka.yml -p sister down

@@ -13,4 +13,5 @@ services:
 networks:
   sister:
     name: sister
+    external: true
 

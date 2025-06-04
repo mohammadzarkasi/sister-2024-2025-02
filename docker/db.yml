@@ -1,6 +1,6 @@
 # version: '3.8'
 services:
-  mysql:
+  mysql1:
     image: mysql
     container_name: mysql1
     restart: always
@@ -17,9 +17,10 @@ services:
     networks:
       - sister
 
-volumes:
-  mysql_data:
+# volumes:
+#   mysql_data:
 
 networks:
   sister:
     name: sister
+    external: true

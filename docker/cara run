@@ -1,0 +1,6 @@
+start db:
+docker compose -f db.yml -p sister up -d
+stop db:
+docker compose -f db.yml -p sister down
+
+

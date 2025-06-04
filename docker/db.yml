@@ -1,0 +1,25 @@
+# version: '3.8'
+services:
+  mysql:
+    image: mysql
+    container_name: mysql1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: root2
+      MYSQL_PASSWORD: 123
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    networks:
+      - sister
+
+volumes:
+  mysql_data:
+
+networks:
+  sister:
+    name: sister

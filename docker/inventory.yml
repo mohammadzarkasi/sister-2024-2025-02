@@ -3,7 +3,8 @@ services:
     image: openjdk:17-jdk-slim
     command: ["java", "-jar", "/app/app.jar"]
     volumes:
-      - ../inventory/target/inventory-0.0.1-SNAPSHOT.jar:/app/app.jar
+      # - ../inventory/target/inventory-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - C:/Users/ThinkPad/Documents/code/sister-2024-2025-02/inventory/target/inventory-0.0.1-SNAPSHOT.jar:/app/app.jar
     ports:
       - "8101:8101"
     networks:

@@ -1,3 +1,7 @@
+compile project java:
+./mvnw clean package -DskipTests
+
+
 start db:
 docker compose -f db.yml -p sister up -d
 stop db:

@@ -6,9 +6,9 @@ spring:
     name: SHIPPING-SERVICE
 
   datasource:
-    url: jdbc:mysql://localhost:3306/shipping
+    url: jdbc:mysql://mysql1:3306/shipping
     username: root
-    password: 12345678
+    password: 123
     driver-class-name: com.mysql.cj.jdbc.Driver
   
   jpa:
@@ -18,3 +18,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka

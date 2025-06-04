@@ -24,3 +24,9 @@ start gateway:
 docker compose -f gateway.yml -p sister up -d
 stop gateway:
 docker compose -f gateway.yml -p sister down
+
+
+start shipping:
+docker compose -f shipping.yml -p sister up -d
+stop gateway:
+docker compose -f shipping.yml -p sister down

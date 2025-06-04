@@ -20,10 +20,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Order {
     @Id
-    @GeneratedValue(generator = "UUID")
+    // @GeneratedValue(generator = "UUID")
     private UUID id;
 
     private UUID userId;
+    private UUID productId;
     private String address;
     private String status;
     private LocalDateTime orderDate;

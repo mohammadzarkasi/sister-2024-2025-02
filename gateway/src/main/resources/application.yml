@@ -8,12 +8,14 @@ spring:
     gateway:
       routes:
         - id: inventory-service
-          uri: http://localhost:8101
+          # uri: http://localhost:8101
+          uri: lb://INVENTORY-SERVICE
           predicates:
             - Path=/api/inventory/**
 
         - id: shipping-service
-          uri: http://localhost:8100
+          # uri: http://localhost:8100
+          uri: lb://SHIPPING-SERVICE
           predicates:
             - Path=/api/shipping/**
 
@@ -21,5 +23,8 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
 
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka
 

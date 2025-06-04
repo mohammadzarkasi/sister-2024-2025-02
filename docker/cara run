@@ -20,3 +20,7 @@ stop inventory:
 docker compose -f inventory.yml -p sister down
 
 
+start gateway:
+docker compose -f gateway.yml -p sister up -d
+stop gateway:
+docker compose -f gateway.yml -p sister down

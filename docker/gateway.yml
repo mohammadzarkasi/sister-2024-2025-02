@@ -1,0 +1,18 @@
+services:
+  gateway-service:
+    image: openjdk:17-jdk-slim
+    command: ["java", "-jar", "/app/app.jar"]
+    volumes:
+      # - ../inventory/target/inventory-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - C:/Users/ThinkPad/Documents/code/sister-2024-2025-02/gateway/target/gateway-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - "8000:8000"
+    networks:
+      - sister
+
+
+networks:
+  sister:
+    name: sister
+    external: true
+

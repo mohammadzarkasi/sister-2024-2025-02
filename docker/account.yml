@@ -1,0 +1,18 @@
+services:
+  account-service:
+    image: openjdk:17-jdk-slim
+    command: ["java", "-jar", "/app/app.jar"]
+    volumes:
+      # - ../account/target/account-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - C:/Users/ThinkPad/Documents/code/sister-2024-2025-02/account/target/account-0.0.1-SNAPSHOT.jar:/app/app.jar
+    ports:
+      - "8102:8102"
+    networks:
+      - sister
+
+
+networks:
+  sister:
+    name: sister
+    external: true
+

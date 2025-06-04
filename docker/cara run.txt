@@ -30,3 +30,10 @@ start shipping:
 docker compose -f shipping.yml -p sister up -d
 stop gateway:
 docker compose -f shipping.yml -p sister down
+
+
+start account:
+docker compose -f account.yml -p sister up -d
+stop account:
+docker compose -f account.yml -p sister down
+

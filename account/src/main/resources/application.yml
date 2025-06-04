@@ -1,0 +1,25 @@
+server:
+  port: 8102
+
+spring:
+  application:
+    name: ACCOUNT-SERVICE
+
+  datasource:
+    url: jdbc:mysql://mysql1:3306/account
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka

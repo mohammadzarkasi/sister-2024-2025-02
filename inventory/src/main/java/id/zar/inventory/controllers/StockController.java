@@ -16,6 +16,7 @@ import id.zar.inventory.entities.InventoryItem;
 public class StockController {
     @GetMapping
     public ResponseEntity<List<InventoryItem>> getAll(){
+        System.out.println("stock controller :: get all");
         var result = new ArrayList<InventoryItem>();
         result.add(InventoryItem.builder().id(UUID.randomUUID()).name("apel").quantity(10).build());
         return ResponseEntity.ok().body(result);
